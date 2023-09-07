@@ -492,16 +492,18 @@
           </ul>
         </div>
         <div class="footer-input">
-          <p class="footer-inpute-title">Supscribe</p>
+          <p class="footer-inpute-title">Subscribe</p>
           <form action="#" class="footer-form">
+            <label class="footer-email" for="user_email"></label>
             <input
               class="footer-inpute-email"
               type="email"
               name="email"
+              id="user_email"
               placeholder="E-mail"
             />
             <button class="footer-button-email" type="submit">
-              Supscribe
+              Subscribe
               <svg class="icon-footer-email" width="24" height="24">
                 <use href="./images/icons.svg#icon-telegram"></use>
               </svg>
@@ -527,7 +529,7 @@
               <input
                 class="form-input"
                 type="text"
-                name="user_name"
+                name="user-name"
                 id="user-name"
                 required
               />
@@ -535,8 +537,9 @@
                 <use href="./images/icons.svg#icon-person"></use>
               </svg>
             </div>
-
-            <label for="user-number" class="form-label">Number </label>
+          </div>
+          <div class="form-box">
+            <label for="user-number" class="form-label">Phone </label>
             <div class="position-svg">
               <input
                 class="form-input"
@@ -549,7 +552,8 @@
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
             </div>
-
+          </div>
+          <div class="form-box">
             <label for="user-email" class="form-label">Email </label>
             <div class="position-svg">
               <input

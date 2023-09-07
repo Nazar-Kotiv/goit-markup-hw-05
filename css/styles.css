@@ -615,13 +615,16 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 4px;
     border: 1px solid var(--WHITE, #FFF);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    background-color: inherit;
-    color: #FFF;
+    background-color: transparent;
     font-size: 12px;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.04em;
-    padding: 8px 16px;
+    padding-left:16px;
 
+}
+
+.footer-inpute-email::placeholder{
+    color: #FFFFFF;
 }
 
 .footer-button-email{
@@ -646,6 +649,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .icon-footer-email
 {
     fill:#FFFFFF;
+    margin-left: 16px;
 }
 
 .footer-input
@@ -682,7 +686,7 @@ visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin: 0 auto;
     background-color: #FCFCFC;
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     border-radius: 4px;
     padding: 72px 24px 24px 24px;
 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -701,9 +705,9 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0p
     display: flex;
     align-items: center;
     padding: 0;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     justify-content: center;
+    cursor: pointer;
     }
 .icon-close{
 transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -754,8 +758,9 @@ margin-bottom: 8px;
 position: absolute;
 left: 16px; 
 top: 50%;
- transform: translateY(-50%);}
-
+ transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .form-input {
 width: 100%;
 height: 40px;
