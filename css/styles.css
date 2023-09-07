@@ -674,15 +674,25 @@ top: 0;
 left: 0;
 position: fixed;
 z-index: 999;
+
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+
 transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
 visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .callback-wrapper{
     position: absolute;
     top: 50%;
     left: 50%;
-    display: block;
     transform: translate(-50%, -50%) scale(1);
     z-index: 999;
     margin: 0 auto;
@@ -691,7 +701,7 @@ visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 584px;
     border-radius: 4px;
     padding: 72px 24px 24px 24px;
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .model-close {
@@ -715,9 +725,8 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0p
 transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.model-close:hover,
+
 .model-close:focus,
-.icon-close:hover,
 .icon-close:focus{
     background-color: #404BBF;
     border: none;
@@ -752,7 +761,7 @@ margin-bottom: 16px;
 
 .position-svg{
     position: relative;
-margin-bottom: 8px;
+    margin-bottom: 8px;
    
 }
 
@@ -760,8 +769,9 @@ margin-bottom: 8px;
 position: absolute;
 left: 16px; 
 top: 50%;
- transform: translateY(-50%);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transform: translateY(-50%);
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .form-input {
 width: 100%;
@@ -824,7 +834,7 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .callback-checkbox {
-  display: flex;
+  display:inline-flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 24px;
@@ -889,10 +899,18 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   stroke: #FFF;
 }
 
-.checkbox-input:checked+.checkbox-policy>.checkbox-icon {
+.checkbox-input:checked+
+.checkbox-policy>
+.checkbox-icon {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
+}
+
+.checkbox-input:focus+
+.checkbox-policy>
+.checkbox-icon {
+outline: rgba(0,0,255,0,5);
 }
 
 .checkbox-policy {
